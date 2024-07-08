@@ -1,0 +1,53 @@
+1) To create angular project
+> ng new sales-project
+
+2) To run angular project
+> ng serve --open
+
+3) To generate new component
+> ng generate component sales-person-list
+
+4) To generate new class 
+> ng generate class sales-person-list/SalesPerson
+EX Class:
+---------
+export class SalesPerson {
+    constructor(
+        public firstName: string,
+        public lastName: string,
+        public email: string,
+        public salesVolume: number ) {
+
+    }
+}
+
+
+5) Define array in TS
+	//create an array of the sales person object
+	salesPersonList: SalesPerson[] = [
+		new SalesPerson("Akash", "Hiwale", "akash@gmail.com", 30000),
+		new SalesPerson("Datta", "Masane", "datta@gmail.com", 40000),
+		new SalesPerson("Shubham", "Mowade", "shubham@gmail.com", 50000),
+		new SalesPerson("Harish", "Sawale", "harish@gmail.com", 60000)
+	];
+
+6) Iterrating an array in html table
+<table border="1">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Sales Volume</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let salesPerson of salesPersonList">
+            <td>{{salesPerson.firstName}}</td>
+            <td>{{salesPerson.lastName}}</td>
+            <td>{{salesPerson.email}}</td>
+            <td>{{salesPerson.salesVolume}}</td>
+        </tr>
+    </tbody>
+</table>
